@@ -1,11 +1,18 @@
-package main.java.com.dossantos.blooddonor;
-
+package main.java.com.dossantos.bloodbank;
+import main.java.com.dossantos.bloodbank.model.Donor;
 import java.util.Scanner;
 
-public class DonorUI {
+public class BloodBankApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         byte option;
+
+        Donor donor = new Donor(
+                "dos Santos",
+                "O+",
+                "86-98154",
+                20
+        );
 
         do {
             System.out.println("### Online Donor Registration ###" +
@@ -21,6 +28,7 @@ public class DonorUI {
                     break;
                 case 2:
                     System.out.println("All donors displayed");
+                    System.out.println(donor);
                     break;
                 case 3:
                     System.out.println("You signed out");
