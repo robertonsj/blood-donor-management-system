@@ -17,8 +17,7 @@ public class DonorService {
 
         //Validate age
         if(donor.getAge() < 18 || donor.getAge() > 60) {
-            throw new InvalidDonorDataException("Name: " + donor.getName() +
-                    "; age must be between 18 and  60");
+            throw new InvalidDonorDataException("Age must be between 18 and  60");
         }
 
         //Validate whether empty name
@@ -28,14 +27,12 @@ public class DonorService {
 
         //Validate blood group
         if(!donor.getBloodGroup().matches("A|B|AB|O")) {
-            throw new InvalidDonorDataException("Name: " + donor.getName() +
-                    "; Invalid blood group");
+            throw new InvalidDonorDataException("Invalid blood group");
         }
 
         //Validate phone number (force size equal to 10)
         if(donor.getPhoneNumber().length() != 10) {
-            throw new InvalidDonorDataException("Donor: " + donor.getName() +
-                    "; Phone number must be 10 digits");
+            throw new InvalidDonorDataException("Phone number must be 10 digits");
         }
     }
 
